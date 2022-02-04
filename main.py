@@ -34,7 +34,7 @@ def main() -> None:
       return 'Less than 10'
     else:
       return 'Not less than 10'
-  output3: str = checkIt(int(sys.argv[1]))
+  output3: str = checkIt(argAsInt)
   print(output3)
 
   # For either/or two-choice decisions like this, I'd probably use the ternary
