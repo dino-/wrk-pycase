@@ -1,5 +1,7 @@
 from typing import Callable, TypeVar
 
+__all__ = ['case', 'const', 'otherwise']
+
 
 a = TypeVar('a')
 b = TypeVar('b')
