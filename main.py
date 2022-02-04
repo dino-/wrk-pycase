@@ -18,16 +18,17 @@ def main() -> None:
     ])
   print(output1)
 
-  # With a conventional if statement. Sad, can't avoid mutation and repetition.
-  # Also awkwardly can't declare the type more than once.
+  # Using a conventional if statement. Unfortunately, because if is a statement
+  # and not an expression, we can't avoid mutation and repetition. Also,
+  # awkwardly can't include a type signature more than once, mypy rejects it.
   if argAsInt < 10:
     output2: str = 'Less than 10'
   else:
     output2 = 'Not less than 10'
   print(output2)
 
-  # Could wrap the if in a function so the value can be returned as though it's
-  # an expression
+  # We could wrap the if in a function so the value can be returned as though
+  # it's an expression, but this is awkward too. Single assignment though!
   def checkIt(n: int) -> str:
     if argAsInt < 10:
       return 'Less than 10'
@@ -35,6 +36,11 @@ def main() -> None:
       return 'Not less than 10'
   output3: str = checkIt(int(sys.argv[1]))
   print(output3)
+
+  # For either/or two-choice decisions like this, I'd probably use the ternary
+  # expression.
+  output4: str = 'Less than 10' if argAsInt < 10 else 'Not less than 10'
+  print(output4)
 
 
 if __name__ == '__main__': main()
