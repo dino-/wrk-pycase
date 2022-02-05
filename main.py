@@ -30,7 +30,7 @@ def main() -> None:
   # We could wrap the if in a function so the value can be returned as though
   # it's an expression, but this is awkward too. Single assignment though!
   def checkIt(n: int) -> str:
-    if argAsInt < 10:
+    if n < 10:
       return 'Less than 10'
     else:
       return 'Not less than 10'
