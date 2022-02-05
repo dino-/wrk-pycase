@@ -7,7 +7,7 @@ a = TypeVar('a')
 b = TypeVar('b')
 
 
-# FIXME Should live in Data.Function
+# NOTE Should live in Data.Function
 def const(y: b) -> Callable[[a], b]:
   return lambda _: y
 

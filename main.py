@@ -32,8 +32,7 @@ def main() -> None:
   def checkIt(n: int) -> str:
     if n < 10:
       return 'Less than 10'
-    else:
-      return 'Not less than 10'
+    return 'Not less than 10'
   output3: str = checkIt(argAsInt)
   print(output3)
 
