@@ -1,15 +1,11 @@
 from typing import Callable, TypeVar
+from Data.Function import const
 
 __all__ = ['case', 'const', 'otherwise']
 
 
 a = TypeVar('a')
 b = TypeVar('b')
-
-
-# NOTE Should live in Data.Function
-def const(y: b) -> Callable[[a], b]:
-  return lambda _: y
 
 
 Case = tuple[Callable[[a], bool], Callable[[a], b]]
